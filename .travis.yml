@@ -26,3 +26,6 @@ before_script:
 script:
   - echo "Travis branch is $TRAVIS_BRANCH"
   - echo "Travis branch is in pull request $TRAVIS_PULL+REQUEST"
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
