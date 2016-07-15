@@ -13,9 +13,7 @@ android:
     - build-tools-22.0.1
     - android-23
     - extra-android-m2repository
-
-    - android-22
-    - sys-img-armeabi-v7a-android-22
+    - sys-img-armeabi-v7a-android-23
 
 before_script:
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
