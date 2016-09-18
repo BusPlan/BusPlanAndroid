@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import com.plan.bus.busplan.R;
-import com.plan.bus.busplan.configuration.dagger.DaggerApplication;
+import com.plan.bus.busplan.configuration.dagger.DaggerUIInjecter;
 import com.plan.bus.busplan.localization.Localization;
 import com.plan.bus.busplan.localization.LocationChangeListener;
 
@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		DaggerApplication.inject(this);
+		DaggerUIInjecter.inject(this);
+
 		localization.init(new LocationChangeListener() {
 			@Override
 			public void updateLocation(Location location) {
